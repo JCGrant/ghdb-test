@@ -1,0 +1,12 @@
+on:
+  repository_dispatch:
+    types: [add, update, delete]
+
+jobs:
+  ghdb:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Update the DB
+        uses: JCGrant/github-db@v0.1-alpha
